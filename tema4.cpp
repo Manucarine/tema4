@@ -5,29 +5,29 @@ using namespace std;
 
 /*
 * Retire 1, 3 ou 4 moedas.
-* Quem tirar a última ganha!
+* Quem tirar a Ãºltima ganha!
 *
-* O primeiro a chegar em 3 (três) vitórias ganha o jogo.
+* O primeiro a chegar em 3 (trÃªs) vitÃ³rias ganha o jogo.
 *
-* O código está incompleto!
-* 1. Leia o código (linha a linha) e seus comentários.
-* 2. Preencha os comentários em ----- MAIÚSCULO ----- com o código que está faltando.
+* O cÃ³digo estÃ¡ incompleto!
+* 1. Leia o cÃ³digo (linha a linha) e seus comentÃ¡rios.
+* 2. Preencha os comentÃ¡rios em ----- MAIÃšSCULO ----- com o cÃ³digo que estÃ¡ faltando.
 * 3. Teste!
 * 4. Repita 2 e 3.
 *
-* Se necessário, use uma folha para lhe auxiliar! Copie o nome das variáveis e seus valores.
+* Se necessÃ¡rio, use uma folha para lhe auxiliar! Copie o nome das variÃ¡veis e seus valores.
 *
 * Boa sorte!
 *
 */
 int main()
 {
-	// O jogo é feito para 2 jogadores.
+	// O jogo Ã© feito para 2 jogadores.
 	string jog1, jog2;
 
 	// Diz qual o jogador da vez: 1 ou 2.
 	int jogador_da_vez = 1;
-	// Começa sempre com o Jogador 1.
+	// ComeÃ§a sempre com o Jogador 1.
 
 	// O vencedor de cada rodada ganha 1 ponto. Quem chegar a 3 pontos primeiro vence o jogo.
 	int pont_jog1 = 0, pont_jog2 = 0;
@@ -59,20 +59,20 @@ int main()
 			cout << " @ ";
 		}
 		/*
-		foi acrescentada esta linha para que pudesse ser dado um espaçoe entre as moedas e a vez
+		foi acrescentada esta linha para que pudesse ser dado um espaÃ§oe entre as moedas e a vez
 		do jogador <3 :D :D
 		*/
 			cout << endl;
-		// Diz qual o jogador que está jogando.
+		// Diz qual o jogador que estÃ¡ jogando.
 		cout << "Vez do Jogador " << jogador_da_vez << endl;
 
 		// Recebe quantas moedas devem ser tiradas pelo jogador.
 		cout << "Digite 1, 3 ou 4 para tirar moedas." << endl;
 		cin >> qnt_moedas_tira;
 
-		// Verifica se a quantidade de moedas retiradas é valida.
+		// Verifica se a quantidade de moedas retiradas Ã© valida.
 		if (qnt_moedas_tira == 1 || (qnt_moedas_tira == 3 && moedas >= 3) || (qnt_moedas_tira == 4 && moedas >= 4))
-			// ------ ESSA CONDIÇÃO POSSUI ALGUM PROBLEMA? VERIFIQUE! -----
+			// ------ ESSA CONDIÃ‡ÃƒO POSSUI ALGUM PROBLEMA? VERIFIQUE! -----
 			// Teste o programa depois de feito e veja se tem algum erro!	
 		{
 			// ------ RETIRAR AS MOEDAS ------
@@ -80,36 +80,36 @@ int main()
 
 			system("cls");
 
-			// Vê se o jogo terminou.
+			// VÃª se o jogo terminou.
 			if (moedas == 0)
 			{
 				// Mostra se o Jogador 1 ou o 2 ganhou.
 				cout << "Ganhou Jogador " << jogador_da_vez << endl;
 
 				// ------ AUMENTAR A PONTUACAO DO JOGADOR QUE GANHOU ------
-				if (jogador_da_vez == 1) pont_jog1 = pont_jog2 + 1;
+				if (jogador_da_vez == 1) pont_jog1 = pont_jog1 + 1;
 				else if (jogador_da_vez == 2) pont_jog2 = pont_jog2 + 1;
 
-				// Se nenhum dos jogadores chegou em 3 pontos ainda, então reinicia a rodada. Se não, sai do jogo.
+				// Se nenhum dos jogadores chegou em 3 pontos ainda, entÃ£o reinicia a rodada. Se nÃ£o, sai do jogo.
 				if (pont_jog1 < 3 && pont_jog2 < 3) moedas = 10;
 				else sair = true;
 				
-				// ------ POR QUE ESSA LINHA É NECESSÁRIA? -----
+				// ------ POR QUE ESSA LINHA Ã‰ NECESSÃRIA? -----
 				// Teste com e sem ela, e comente!
 				system("pause");
 
 				/*
-				caso este comando não estivesse apresentado nesta linha, não teria como os jogadores saberem quem foi o 
-				vencedor do jogo, por tanto se faz necessario uma pausa durante a execulssão para que possa ser mostrado 
+				caso este comando nÃ£o estivesse apresentado nesta linha, nÃ£o teria como os jogadores saberem quem foi o 
+				vencedor do jogo, por tanto se faz necessario uma pausa durante a execulssÃ£o para que possa ser mostrado 
 				quem foi o ganhador, ou vice ver.
 				*/
 			}
-			// Se não, troca para o próximo jogador.
+			// Se nÃ£o, troca para o prÃ³ximo jogador.
 			else
 			{
 				// ------ TROCAR DE JOGADOR (DO 1 PARA O 2 E VICEVERSA) ------
-				/* inicio no 1, se jog 1 terminou então troco pro 2 (manu coment)
-				se estava no dois então troco pro um
+				/* inicio no 1, se jog 1 terminou entÃ£o troco pro 2 (manu coment)
+				se estava no dois entÃ£o troco pro um
 				*/
 
 				if (jogador_da_vez == 1) jogador_da_vez = 2;
@@ -120,32 +120,32 @@ int main()
 		else
 		{
 			/* Se o jogador digitou uma quantidade de moedas invalida (ou seja, diferente de 1, 3 ou 4)
-			* então mostra uma mensagem de erro. */
+			* entÃ£o mostra uma mensagem de erro. */
 			cout << "Numero de moedas invalido. Tente novamente (Digite 1, 3 ou 4)." << endl;
 
 			/* manu comentario
 			se por ventura o usuario digitar um numero que nao esteja correspondente aos que pedem para ser digitados 
-			e retirados da quantidade de moedas atual, esta linha avisará que o processo não podera ser concluido pois
+			e retirados da quantidade de moedas atual, esta linha avisarÃ¡ que o processo nÃ£o podera ser concluido pois
 			o numero digitado pelo usuario esta invalido
 			*/
 
-			// ------ POR QUE ESSA LINHA É NECESSÁRIA? -----
+			// ------ POR QUE ESSA LINHA Ã‰ NECESSÃRIA? -----
 			/* pq se nao tivesse esta linha, caso o usuario digitasse um numero que nao esta na mecanica abordada no jogo
-			não teria como ele saber o pq do erro durante o processo de jogabilidade, por tanto para este caso foi necessario
+			nÃ£o teria como ele saber o pq do erro durante o processo de jogabilidade, por tanto para este caso foi necessario
 			o uso do comando "pause" que nada mais eh do que pausar para que o usuario possa ver onde foi o erro.
 			*/
 			system("pause");
 		}
 
-		// ------ LIMPAR A TELA PARA A PRÓXIMA RODADA ------
+		// ------ LIMPAR A TELA PARA A PRÃ“XIMA RODADA ------
 		system("cls");
-		// Coloque o código aqui!
+		// Coloque o cÃ³digo aqui!
 	}
 
-	// Ao final das rodadas, mostra o nome do jogador com a maior pontuação.
+	// Ao final das rodadas, mostra o nome do jogador com a maior pontuaÃ§Ã£o.
 	if (pont_jog1 > pont_jog2) cout << "Jogador 1 " << jog1 << " Venceu as tres rodadas!" << endl;
 	else cout << "Jogador 2 " << jog2 << " Venceu as tres rodadas!" << endl;
-	// Será aquele que atingir 3 pontos.
+	// SerÃ¡ aquele que atingir 3 pontos.
 
 	return 0;
 }
